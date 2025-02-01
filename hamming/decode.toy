@@ -1,0 +1,71 @@
+/******************************************************************************
+ *  Description:
+ *  Input:
+ *  Output:
+ ******************************************************************************/
+ 
+ 
+10: 8AFF   read R[A]                     read M1
+11: 7101   R[1] <- 0001                  
+ 
+12: DA16   if (R[A] > 0) goto 16         checking if we have reached FFFF
+13: CA16   if (R[A] == 0) goto 16        if not we continue to location 16
+                                         
+14: 9AFF   write R[A]                    prints out FFFF
+15: 0000   halt                          stops program
+ 
+16: 8BFF   read R[B]                     read M2
+17: 8CFF   read R[C]                     read M3
+18: 8DFF   read R[D]                     read M4
+19: 82FF   read R[2]                     read P1
+1A: 83FF   read R[3]                     read P2
+1B: 84FF   read R[4]                     read P3
+ 
+ 
+1C: 4EAB   R[E] <- R[A] ^ R[B]           Find C1
+1D: 4FED   R[F] <- R[E] ^ R[D]           
+1E: 452F   R[5] <- R[2] ^ R[F]           
+ 
+1F: 4EAC   R[E] <- R[A] ^ R[C]           Find C2
+20: 4FED   R[F] <- R[E] ^ R[D]           
+21: 463F   R[6] <- R[3] ^ R[F]           C2
+ 
+22: 4EBC   R[E] <- R[B] ^ R[C]           Find C3
+23: 4FED   R[F] <- R[E] ^ R[D]           
+24: 474F   R[7] <- R[4] ^ R[F]           C3
+ 
+ 
+25: 1E56   R[E] <- R[5] + R[6]           
+26: 1FE7   R[F] <- R[E] + R[7]           F IS THE SUM OF M1, M2, M3
+27: 7803   R[8] <- 0003                  STORES 3 AT M[8]
+28: 2E8F   R[E] <- R[8] - R[F]           
+29: DE2C   if (R[E] > 0) goto 2C         
+2A: 4D1D   R[D] <- R[1] ^ R[D]           IF SUM = 3, UPDATE D; ELSE CONTINUE 
+2B: C03B   goto 3B                       Goes to the end of the array
+ 
+2C: 1F56   R[F] <- R[5] + R[6]           
+2D: 7902   R[9] <- 0002                  
+2E: 2E9F   R[E] <- R[9] - R[F]           
+2F: DE32   if (R[E] > 0) goto 32         IF SUM = 2, UPDATE A; ELSE CONTINUE
+30: 4A1A   R[A] <- R[1] ^ R[A]           Goes to the end of the array
+ 
+31: C03B   goto 3B                       
+ 
+32: 1F57   R[F] <- R[5] + R[7]           
+33: 2E9F   R[E] <- R[9] - R[F]           
+34: DE37   if (R[E] > 0) goto 37         IF SUM = 2, UPDATE B; ELSE CONTINUE
+35: 4B1B   R[B] <- R[1] ^ R[B]           Goes to the end of the array
+ 
+36: C03B   goto 3B                       
+ 
+37: 1F67   R[F] <- R[6] + R[7]           
+38: 2E9F   R[E] <- R[9] - R[F]           
+39: DE3B   if (R[E] > 0) goto 3B         IF SUM = 2, UPDATE C; ELSE CONTINUE
+3A: 4C1C   R[C] <- R[1] ^ R[C]           
+ 
+ 
+3B: 9AFF   write R[A]                    Prints out the the corrected values
+3C: 9BFF   write R[B]                    
+3D: 9CFF   write R[C]                    
+3E: 9DFF   write R[D]                    
+3F: C010   goto 10                       Repeat for next 7 inputs or FFFF
