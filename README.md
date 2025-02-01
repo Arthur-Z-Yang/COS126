@@ -1,2 +1,2 @@
-# COS126
-Work for COS126
+# CS
+Completed work for CS Classes
