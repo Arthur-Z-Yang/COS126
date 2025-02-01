@@ -1,0 +1,35 @@
+/******************************************************************************
+ *  Description:
+ *  Input:
+ *  Output:
+ ******************************************************************************/
+ 
+10: 8AFF   read R[A]                     read m1
+ 
+11: DA17   if (R[A] > 0) goto 17         if FFFF (negative) terminate  program
+12: CA17   if (R[A] == 0) goto 17        otherwise continue to 17
+ 
+13: 7101   R[1] <- 0001                  
+14: 2E01   R[E] <- -R[1]                 
+15: 9EFF   write R[E]                    
+16: 0000   halt                          
+ 
+17: 9AFF   write R[A]                    Read and print m1, m2, m3, and m4
+18: 8BFF   read R[B]                     
+19: 9BFF   write R[B]                    
+1A: 8CFF   read R[C]                     
+1B: 9CFF   write R[C]                    
+1C: 8DFF   read R[D]                     
+1D: 9DFF   write R[D]                    
+ 
+1E: 4EAB   R[E] <- R[A] ^ R[B]           calculate p1
+1F: 4FED   R[F] <- R[E] ^ R[D]           
+20: 9FFF   write R[F]                    print p1
+21: 4EAC   R[E] <- R[A] ^ R[C]           calculaate p2
+22: 4FED   R[F] <- R[E] ^ R[D]           
+23: 9FFF   write R[F]                    print p2
+24: 4EBC   R[E] <- R[B] ^ R[C]           calculate p3
+25: 4FED   R[F] <- R[E] ^ R[D]           
+26: 9FFF   write R[F]                    print p3
+ 
+27: C010   goto 10                       continue reading until FFFF
