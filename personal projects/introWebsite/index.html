@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pokemon Cards</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>What are Pokemon Cards</h1>
+  <div onmouseover="changeColor()" onmouseout="returnColor()"
+  id = "backColor" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+  Mouse Over Me</div>
+  <button onclick="changeText()">
+    Remove Text
+  </button>
+  
+  <p id = "basicInfo" class = "info">Pokemon cards are cards that can be used to battle pokemon. They are often collected for their rarity. Not all pokemon cards are created equal however.</p>
+  <h2>Rarity Levels</h2>
+  <p id = "info2" class = "info">Pokemon cards rarity varies via the symbol on their card</p>
+  <img src="https://images.getcardbase.com/taadogsfwp3sn42kmx3kvmd4itht" alt="Pokemon Cards" width="500" height="300">
+  <p class = "info">Some pokemon cards come with foil that can be either reverse holo or holo rare</p>
+  <P class = "info">Here is a holo card</P>
+  <img src="https://cdn-0.codedyellow.com/wp-content/uploads/2021/04/Holo-Card.jpg?ezimgfmt=ng:webp/ngcb4"id="Pokemon Cards1" width="200" height="200">
+  <p>Here is a Reverse Holo</p>
+  <img src="https://cdn-0.codedyellow.com/wp-content/uploads/2021/04/Reverse-Holo.jpg?ezimgfmt=ng:webp/ngcb4"id="Pokemon Cards2" width="200" height="200">
+  <h3>Ultra Rare</h3>
+  <p id = "Description">Ultra Rare are marked with the Rare black star, but they will have additions to their names (V, VMAX, EX) to tie them to a unique kind of card, game mechanic or set. These names typically develop over time as new versions of the Ultra Rare Pokémon card become available. All Ultra Rare Pokémon cards have a holographic shine on them. Their art is also special, covering either half or the full card.
+    <ul>
+      <li>Pokémon-EX – Introduced in the Next Destinies set, the EX cards have also appeared in the later XY series and the Black & White series.</li>
+      <li>Pokémon-ex – The same sets with the EX cards also feature lower-case “ex” cards. In this case, “ex” stands for the extra attack abilities they will have the lowercase “ex” after their name… it stands for “extra” because they have extra attack capabilities.</li>
+      <li>Pokémon-GX – These cards were introduced in the Sun & Moon card sets and are easy to spot with the “GX” after the Pokémon’s name.</li>
+      <li>Pokémon LEGEND – These paired cards were introduced in the HeartGold and SoulSilver lines, with a top and bottom half. Both have the word “LEGEND” after the card name so they’re easy to spot.</li>
+      <li>Pokemon LV.X – These Pokémon cards are available in the Diamond & Pearl and Platinum series, with the letters “LV.X” printed after the card name.</li>
+      <li>Pokémon Prime – Primes are powerful in-game cards from the HeartGold and SoulSilver sets. They sport a special design that features a holo border. Most show a close-up facial shot of the Pokémon’s face prominently.</li>
+      <li>Pokemon Star – These cards from the EX series sets have a shiny star symbol next to the card name.</li>
+    </ul>
+  <img src="https://images.getcardbase.com/81jm5wd4zwcxvcqifvq58pjcwp1k" id="Pokemon Cards3" width="650" height="300"> 
+ </p>
+  <input type="text" id="PokemonCards3" onchange="changePic()">
+  <h4>Secret Rare</h4>
+  <p id="secretRare">
+    Exceptionally Rare cards that have a special number outside the regular numbers assigned to the set (for example, they will be 151/150). These cards are very rare to pull from regular booster packs and feature special art styles. They may also have some of the features of Ultra Rare cards, like additions to their name (like EX, GX), holographic images, or being printed as golden or rainbow cards.
+    <img src="https://images.squarespace-cdn.com/content/v1/5cf4cfa4382ac0000123aa1b/1691691434238-EVK8LI0II6O5ZSP6KOLK/sv3_en_223.png?format=300w" id="Pokemon Cards" width="300" height="300">
+  </p>
+  <body onload="linkSite()">
+  <a href="https://www.justinbasil.com/visual/sv4" id = "link"> </a>
+  <button type = "button" id = "counter"> Counter </button>
+  <script src="script.js">
+    document.getElementId("counter").addEventListener("click", clickCounter);
+    
+  </script>
+  
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
